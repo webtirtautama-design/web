@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BUM DESA TIRTA UTAMA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home">
+    <div class="container">
+
+        <!-- NAVIGATION BAR -->
+        <div class="container-navbar">
+            <ul class="ul-navbar">
+                <li class="li-navbar">
+                    <a href="index.html" class="a-navbar active">BERANDA</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="companyprofile.html" class="a-navbar">PROFIL PERUSAHAAN</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="layanan.html" class="a-navbar">LAYANAN</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="legalitas.html" class="a-navbar">LEGALITAS</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="artikel.html" class="a-navbar">ARTIKEL</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="hubungikami.html" class="a-navbar">HUBUNGI KAMI</a>
+                </li>
+            </ul>
+        </div>
+        <!-- END OF NAVIGATION BAR -->
+
+        <!-- CONTENT -->
+        <main>
+
+            <!-- HERO SLIDER: slide 1 = sapaan, slide berikutnya = artikel terbaru (dibuat otomatis oleh beranda.js) -->
+            <section class="hm-hero" aria-roledescription="carousel" aria-label="Sapaan dan artikel terbaru">
+                <div class="hm-track" id="hm-track">
+
+                    <!-- Slide 1: sapaan -->
+                    <div class="hm-slide">
+                        <div class="hm-slide-in">
+                            <div>
+                                <span class="hm-kicker">Badan Usaha Milik Desa Mukiran</span>
+                                <h1>BUM Desa <span>Tirta Utama</span></h1>
+                                <p>Menyediakan berbagai layanan untuk memenuhi kebutuhan sehari-hari masyarakat Desa Mukiran, mulai dari air bersih, simpan pinjam, hingga layanan pembayaran dan produk digital.</p>
+                                <div class="hm-btns">
+                                    <a href="hubungikami.html" class="btn btn-primary">Hubungi Kami</a>
+                                </div>
+                            </div>
+                            <div class="hm-visual hm-visual-logo">
+                                <img src="logo.png" alt="Logo BUM Desa Tirta Utama">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide artikel disisipkan di sini oleh beranda.js -->
+
+                </div>
+
+                <button type="button" class="hm-arrow hm-prev" id="hm-prev" aria-label="Slide sebelumnya">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg>
+                </button>
+                <button type="button" class="hm-arrow hm-next" id="hm-next" aria-label="Slide berikutnya">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg>
+                </button>
+                <div class="hm-dots" id="hm-dots"></div>
+            </section>
+
+            <!-- LAYANAN -->
+            <section class="hm-section">
+                <div class="hm-wrap">
+                    <h2 class="hm-title">Layanan Kami</h2>
+                    <p class="hm-sub">Lima layanan BUM Desa Tirta Utama untuk mendukung kebutuhan masyarakat dan pelaku usaha Desa Mukiran.</p>
+
+                    <div class="hm-svc-grid">
+                        <a href="layanan.html" class="hm-svc">
+                            <span class="hm-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 14.5a2.6 2.6 0 0 0 2.2 2.4"/></svg></span>
+                            <h3>Penyediaan Air Bersih</h3>
+                            <p>Distribusi air bersih bagi warga Desa Mukiran dan sekitarnya.</p>
+                        </a>
+                        <a href="layanan.html" class="hm-svc">
+                            <span class="hm-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9"/><path d="M14.6 9.8c-.5-.9-1.5-1.3-2.6-1.3-1.5 0-2.5.7-2.5 1.7s1 1.5 2.5 1.8 2.5.8 2.5 1.8-1 1.7-2.5 1.7c-1.1 0-2.1-.4-2.6-1.3"/></svg></span>
+                            <h3>Simpan Pinjam</h3>
+                            <p>Modal bagi pelaku UMKM dengan jasa pinjaman yang terjangkau.</p>
+                        </a>
+                        <a href="layanan.html" class="hm-svc">
+                            <span class="hm-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l1.6-5h12.8L20 9"/><path d="M4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0A2.7 2.7 0 0 0 20 9"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></svg></span>
+                            <h3>Pasar Desa</h3>
+                            <p>Memfasilitasi UMKM Desa Mukiran agar berkembang di era digital.</p>
+                        </a>
+                        <a href="layanan.html" class="hm-svc">
+                            <span class="hm-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.2"/><path d="M3 10.5h18"/><path d="M7 15h4"/></svg></span>
+                            <h3>Layanan PPOB</h3>
+                            <p>PBB, listrik, transfer ke bank dan e-wallet.</p>
+                        </a>
+                        <a href="layanan.html" class="hm-svc">
+                            <span class="hm-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2.2"/><path d="M8 20h8M12 16v4"/><path d="M9.6 8.4L7.6 10l2 1.6M14.4 8.4l2 1.6-2 1.6"/></svg></span>
+                            <h3>Layanan Digital</h3>
+                            <p>Pembuatan website, company profile, dan aplikasi sesuai kebutuhan.</p>
+                        </a>
+                    </div>
+
+                    <div class="hm-center">
+                        <a href="layanan.html" class="btn btn-primary">Lihat Semua Layanan</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMPANY PROFILE -->
+            <section class="hm-section">
+                <div class="hm-wrap hm-about">
+                    <img src="bumdes.png" class="hm-about-img" alt="Ruang resepsionis BUM Desa Tirta Utama Mukiran">
+
+                    <div>
+                        <h2>Tentang BUM Desa Tirta Utama</h2>
+                        <p>Tirta Utama merupakan Badan Usaha Milik Desa (BUMDes) Mukiran yang menyediakan berbagai 
+                            layanan untuk memenuhi kebutuhan sehari-hari masyarakat. Kami turut mendukung pembangunan 
+                            desa melalui kontribusi terhadap Pendapatan Asli Desa (PADes), penyerapan tenaga kerja, 
+                            serta penyediaan layanan multipayment dan produk digital.</p>
+
+                        <div class="hm-stats">
+                            <div><b>5</b><span>Layanan</span></div>
+                            <div><b>4</b><span>Bidang Usaha</span></div>
+                            <div><b>2022</b><span>Terdaftar Badan Hukum</span></div>
+                        </div>
+
+                        <a href="companyprofile.html" class="btn btn-primary">Selengkapnya</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <!-- END OF CONTENT -->
+
+        <!-- FOOTER -->
+        <footer class="container-footer">
+            <div class="footer-grid">
+                <div class="footer-card">
+                    <img src="logo.png" class="footer-logo" alt="BUM Desa Tirta Utama">
+                    <h3>BUM Desa Tirta Utama</h3>
+                    <p>Jl. dr. Cipto Mangunkusumo KM.01, Desa Mukiran, Kecamatan Kaliwungu, Kabupaten Semarang, Jawa Tengah</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-list footer-check">
+                        <li><a href="companyprofile.html">Tentang Kami</a></li>
+                        <li><a href="layanan.html">Layanan</a></li>
+                        <li><a href="legalitas.html">Legalitas</a></li>
+                        <li><a href="artikel.html">Artikel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak Kami</h4>
+                    <ul class="footer-list">
+                        <li>WhatsApp: 081913682231</li>
+                        <li>Email: tirtautamabumdes@gmail.com</li>
+                        <li>Jam layanan: 08:00 - 17:00 WIB</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BUM Desa Tirta Utama</p>
+            </div>
+        </footer>
+        <!-- END OF FOOTER -->
+
+    </div>
+
+    <script src="ilustrasi.js"></script>
+    <script src="artikel-data.js"></script>
+    <script src="beranda.js"></script>
+    <script src="logo-scroll.js"></script>
+</body>
+</html>

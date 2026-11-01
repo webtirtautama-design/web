@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Artikel - BUM Desa Tirta Utama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- NAVIGATION BAR -->
+        <div class="container-navbar">
+            <ul class="ul-navbar">
+                <li class="li-navbar">
+                    <a href="index.html" class="a-navbar active">BERANDA</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="companyprofile.html" class="a-navbar">PROFIL PERUSAHAAN</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="layanan.html" class="a-navbar">LAYANAN</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="legalitas.html" class="a-navbar">LEGALITAS</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="artikel.html" class="a-navbar">ARTIKEL</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="hubungikami.html" class="a-navbar">HUBUNGI KAMI</a>
+                </li>
+            </ul>
+        </div>
+        <!-- END OF NAVIGATION BAR -->
+
+        <!-- CONTENT: ARTIKEL -->
+        <main class="cp-main">
+
+            <!-- ===== TAMPILAN DAFTAR ARTIKEL ===== -->
+            <div id="ar-list">
+
+                <!-- Judul halaman -->
+                <section class="cp-hero">
+                    <div class="cp-hero-inner">
+                        <h1>Artikel &amp; Berita</h1>
+                        <p>Kabar terbaru, kegiatan, dan tips seputar layanan BUM Desa Tirta Utama untuk warga Desa Mukiran.</p>
+                    </div>
+                </section>
+
+                <!-- Daftar artikel (kartu dibuat otomatis oleh artikel.js dari artikel-data.js) -->
+                <section class="cp-section">
+                    <div class="cp-wrap">
+                        <div class="ar-tools">
+                            <input type="search" id="ar-search" class="ar-search" placeholder="Cari artikel..." aria-label="Cari artikel">
+                            <div id="ar-filter" class="ar-filter" role="group" aria-label="Filter kategori"></div>
+                            <p id="ar-count" class="ar-count" aria-live="polite"></p>
+                        </div>
+
+                        <div id="ar-grid" class="berita-grid"></div>
+
+                        <div id="ar-empty" class="ar-empty" hidden>
+                            <h3>Artikel tidak ditemukan</h3>
+                            <p>Coba kata kunci lain atau pilih kategori yang berbeda.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ajakan -->
+                <section class="cp-section">
+                    <div class="cp-wrap">
+                        <div class="cp-cta">
+                            <h2>Ada pertanyaan seputar layanan kami?</h2>
+                            <p>Hubungi kami di jam layanan, tim BUM Desa Tirta Utama siap membantu.</p>
+                            <a href="hubungikami.html" class="btn btn-primary">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ===== TAMPILAN BACA ARTIKEL (dibuka lewat #artikel-0, #artikel-1, dst) ===== -->
+            <div id="ar-detail" hidden>
+                <section class="cp-section">
+                    <div class="cp-wrap">
+                        <div class="ar-back">
+                            <a href="artikel.html" class="btn btn-secondary">&larr; Semua Artikel</a>
+                        </div>
+                        <article id="ar-read" class="ar-read"></article>
+
+                        <div id="ar-more" class="ar-more" hidden>
+                            <h2 class="cp-title">Artikel Lainnya</h2>
+                            <div id="ar-more-grid" class="berita-grid"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+        <!-- END OF CONTENT -->
+
+        <!-- FOOTER -->
+        <footer class="container-footer">
+            <div class="footer-grid">
+                <div class="footer-card">
+                    <img src="logo.png" class="footer-logo" alt="BUM Desa Tirta Utama">
+                    <h3>BUM Desa Tirta Utama</h3>
+                    <p>Jl. dr. Cipto Mangunkusumo KM.01, Desa Mukiran, Kecamatan Kaliwungu, Kabupaten Semarang, Jawa Tengah</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-list footer-check">
+                        <li><a href="companyprofile.html">Tentang Kami</a></li>
+                        <li><a href="layanan.html">Layanan</a></li>
+                        <li><a href="legalitas.html">Legalitas</a></li>
+                        <li><a href="artikel.html">Artikel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak Kami</h4>
+                    <ul class="footer-list">
+                        <li>WhatsApp: 081913682231</li>
+                        <li>Email: tirtautamabumdes@gmail.com</li>
+                        <li>Jam layanan: 08:00 - 17:00 WIB</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BUM Desa Tirta Utama</p>
+            </div>
+        </footer>
+        <!-- END OF FOOTER -->
+
+    </div>
+
+    <script src="ilustrasi.js"></script>
+    <script src="artikel-data.js"></script>
+    <script src="artikel.js"></script>
+    <script src="logo-scroll.js"></script>
+</body>
+</html>
