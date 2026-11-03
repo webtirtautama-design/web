@@ -2319,3 +2319,21 @@ body::before { display: none; }          /* foto latar lama dimatikan di semua h
     margin: 0 auto;
     border-radius: 12px;
 }
+
+/* titik huruf "i" pada kata Tirta berwarna merah */
+.i-merah {
+    position: relative;
+    display: inline-block;
+}
+
+.i-merah::after {
+    content: "";
+    position: absolute;
+    top: 0.08em;               /* naik/turun titik: ubah angka ini */
+    left: 50%;
+    width: 0.19em;             /* ukuran titik */
+    height: 0.19em;
+    background: #E53935;       /* warna merah */
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
