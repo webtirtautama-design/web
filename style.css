@@ -2337,3 +2337,28 @@ body::before { display: none; }          /* foto latar lama dimatikan di semua h
     border-radius: 50%;
     transform: translateX(-50%);
 }
+
+/* ---------- Slide layanan: ikon besar di sisi kanan ---------- */
+.hm-visual-icon {
+    display: grid;
+    place-items: center;
+    color: var(--sky-dk);
+    text-decoration: none;
+    background: linear-gradient(135deg, #EEF6FC, #CDE5F6);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hm-visual-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 60px rgba(59, 143, 207, 0.3);
+}
+
+.hm-visual-icon svg {
+    width: 38%;
+    height: auto;
+}
+
+.hm-visual-icon:focus-visible {
+    outline: 3px solid var(--sky);
+    outline-offset: 3px;
+}

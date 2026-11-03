@@ -9,13 +9,37 @@
     var track = document.getElementById('hm-track');
     if (!track) return;
 
-    /* ---------- Buat slide artikel ---------- */
-    var data = (typeof DAFTAR_ARTIKEL !== 'undefined' ? DAFTAR_ARTIKEL : []).map(function (a, i) {
-        a.id = i;
-        return a;
-    }).sort(function (a, b) {
-        return a.tanggal < b.tanggal ? 1 : (a.tanggal > b.tanggal ? -1 : 0);
-    }).slice(0, JUMLAH_ARTIKEL);
+    /* ---------- Buat slide layanan ---------- */
+    var IKON = {
+        air:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 14.5a2.6 2.6 0 0 0 2.2 2.4"/></svg>',
+        simpan:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9"/><path d="M14.6 9.8c-.5-.9-1.5-1.3-2.6-1.3-1.5 0-2.5.7-2.5 1.7s1 1.5 2.5 1.8 2.5.8 2.5 1.8-1 1.7-2.5 1.7c-1.1 0-2.1-.4-2.6-1.3"/></svg>',
+        pasar:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l1.6-5h12.8L20 9"/><path d="M4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0A2.7 2.7 0 0 0 20 9"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></svg>',
+        ppob:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.2"/><path d="M3 10.5h18"/><path d="M7 15h4"/></svg>',
+        digital: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2.2"/><path d="M8 20h8M12 16v4"/><path d="M9.6 8.4L7.6 10l2 1.6M14.4 8.4l2 1.6-2 1.6"/></svg>'
+        };
+
+    var DAFTAR_LAYANAN = [
+        {   judul: 'Penyediaan Air Bersih',
+            ringkasan: 'Distribusi air bersih bagi warga Desa Mukiran dan sekitarnya.',
+            ikon: 'air'
+        },
+        {   judul: 'Simpan Pinjam',
+            ringkasan: 'Modal bagi pelaku UMKM dengan jasa pinjaman yang terjangkau.',
+            ikon: 'simpan'
+        },
+        {   judul: 'Pasar Desa',
+            ringkasan: 'Memfasilitasi UMKM Desa Mukiran agar berkembang di era digital.',
+            ikon: 'pasar'
+        },
+        {   judul: 'Layanan PPOB',
+            ringkasan: 'Pembayaran PBB, listrik, serta transfer ke bank dan e-wallet.',
+            ikon: 'ppob'
+        },
+        {   judul: 'Layanan Digital',
+            ringkasan: 'Pembuatan website, company profile, dan aplikasi sesuai kebutuhan.',
+            ikon: 'digital'
+        }
+    ];
 
     function el(tag, kelas, teks) {
         var e = document.createElement(tag);
@@ -30,32 +54,24 @@
         return a;
     }
 
-    data.forEach(function (a) {
+    DAFTAR_LAYANAN.forEach(function (l, i) {
         var slide = el('div', 'hm-slide');
         var dalam = el('div', 'hm-slide-in');
         var teks = el('div');
 
-        teks.appendChild(el('span', 'hm-kicker', a.kategori));
-        teks.appendChild(el('h2', '', a.judul));
-        teks.appendChild(el('p', '', a.ringkasan));
-        teks.appendChild(el('span', 'hm-date', BUMDES.formatTanggal(a.tanggal)));
+        teks.appendChild(el('span', 'hm-kicker', 'Layanan ' + (i + 1) + ' dari ' + DAFTAR_LAYANAN.length));
+        teks.appendChild(el('h2', '', l.judul));
+        teks.appendChild(el('p', '', l.ringkasan));
 
         var tombolWrap = el('div', 'hm-btns');
-        var baca = (a.link && a.link !== 'artikel.html') ? a.link : 'artikel.html#artikel-' + a.id;
-        tombolWrap.appendChild(tombol('Hubungi Kami', 'hubungikami.html', 'btn-primary'));
-        tombolWrap.appendChild(tombol('Baca Selengkapnya', baca, 'btn-secondary'));
+        tombolWrap.appendChild(tombol('Lihat Layanan', 'layanan.html', 'btn-primary'));
+        tombolWrap.appendChild(tombol('Hubungi Kami', 'hubungikami.html', 'btn-secondary'));
         teks.appendChild(tombolWrap);
 
-        var visual = el('div', 'hm-visual');
-        if (a.gambar) {
-            var img = document.createElement('img');
-            img.src = a.gambar;
-            img.alt = a.judul;
-            img.onerror = function () { visual.innerHTML = BUMDES.svgIlustrasi(a.ilustrasi); };
-            visual.appendChild(img);
-        } else {
-            visual.innerHTML = BUMDES.svgIlustrasi(a.ilustrasi);
-        }
+        var visual = el('a', 'hm-visual hm-visual-icon');
+        visual.href = 'layanan.html';
+        visual.setAttribute('aria-label', 'Lihat layanan ' + l.judul);
+        visual.innerHTML = IKON[l.ikon];
 
         dalam.appendChild(teks);
         dalam.appendChild(visual);
