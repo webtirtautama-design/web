@@ -10,34 +10,19 @@
     if (!track) return;
 
     /* ---------- Buat slide layanan ---------- */
-    var IKON = {
-        air:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 14.5a2.6 2.6 0 0 0 2.2 2.4"/></svg>',
-        simpan:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9"/><path d="M14.6 9.8c-.5-.9-1.5-1.3-2.6-1.3-1.5 0-2.5.7-2.5 1.7s1 1.5 2.5 1.8 2.5.8 2.5 1.8-1 1.7-2.5 1.7c-1.1 0-2.1-.4-2.6-1.3"/></svg>',
-        pasar:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l1.6-5h12.8L20 9"/><path d="M4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0A2.7 2.7 0 0 0 20 9"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></svg>',
-        ppob:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.2"/><path d="M3 10.5h18"/><path d="M7 15h4"/></svg>',
-        digital: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2.2"/><path d="M8 20h8M12 16v4"/><path d="M9.6 8.4L7.6 10l2 1.6M14.4 8.4l2 1.6-2 1.6"/></svg>'
-        };
 
     var DAFTAR_LAYANAN = [
-        {   judul: 'Penyediaan Air Bersih',
-            ringkasan: 'Distribusi air bersih bagi warga Desa Mukiran dan sekitarnya.',
-            ikon: 'air'
+        {   judul: 'Layanan Air Bersih',
+            ringkasan: 'BUM Desa Tirta Utama terus memperluas jaringan distribusi air bersih untuk warga desa mukiran dan sekitarnya.',
+            ikon: 'air-bersih.jpeg'
         },
-        {   judul: 'Simpan Pinjam',
-            ringkasan: 'Modal bagi pelaku UMKM dengan jasa pinjaman yang terjangkau.',
-            ikon: 'simpan'
+        {   judul: 'Layanan Warung Digital',
+            ringkasan: 'Pertumbuhan bisnis anda mulai dari sini mami menyediakan layanan jasa design web, berbagai macam kebutuhan aplikasi untuk usaha anda.',
+            ikon: 'warung-digital.jpeg'
         },
-        {   judul: 'Pasar Desa',
-            ringkasan: 'Memfasilitasi UMKM Desa Mukiran agar berkembang di era digital.',
-            ikon: 'pasar'
-        },
-        {   judul: 'Layanan PPOB',
-            ringkasan: 'Pembayaran PBB, listrik, serta transfer ke bank dan e-wallet.',
-            ikon: 'ppob'
-        },
-        {   judul: 'Layanan Digital',
-            ringkasan: 'Pembuatan website, company profile, dan aplikasi sesuai kebutuhan.',
-            ikon: 'digital'
+        {   judul: 'Layanan Multipayment',
+            ringkasan: 'Bayar PBB, listrik, tiket pesawat dan kereta, dan kebutuhan finansial lain telah tersedia di NUM Desa Tirta Utama',
+            ikon: 'multipayment.jpeg'
         }
     ];
 
@@ -71,7 +56,10 @@
         var visual = el('a', 'hm-visual hm-visual-icon');
         visual.href = 'layanan.html';
         visual.setAttribute('aria-label', 'Lihat layanan ' + l.judul);
-        visual.innerHTML = IKON[l.ikon];
+        var img = document.createElement('img');
+        img.src = l.ikon;
+        img.alt = l.judul;
+        visual.appendChild(img);
 
         dalam.appendChild(teks);
         dalam.appendChild(visual);

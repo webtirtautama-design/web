@@ -1931,8 +1931,7 @@ body.home::before { display: none; }   /* foto latar lama diganti hero slider */
     box-shadow: 0 22px 50px rgba(59, 143, 207, 0.22);
 }
 
-.hm-visual img,
-.hm-visual svg {
+.hm-visual img {
     display: block;
     width: 100%;
     height: 100%;
@@ -2329,7 +2328,7 @@ body::before { display: none; }          /* foto latar lama dimatikan di semua h
 .i-merah::after {
     content: "";
     position: absolute;
-    top: 0.08em;               /* naik/turun titik: ubah angka ini */
+    top: 0.2em;               /* naik/turun titik: ubah angka ini */
     left: 50%;
     width: 0.19em;             /* ukuran titik */
     height: 0.19em;
@@ -2361,4 +2360,255 @@ body::before { display: none; }          /* foto latar lama dimatikan di semua h
 .hm-visual-icon:focus-visible {
     outline: 3px solid var(--sky);
     outline-offset: 3px;
+}
+
+/* ==========================================================
+   LAYANAN: kartu bisa diklik + popup detail
+   ========================================================== */
+.ly-card {
+    cursor: pointer;
+}
+
+.ly-card:focus-visible {
+    outline: 3px solid var(--sky);
+    outline-offset: 3px;
+}
+
+.ly-more {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--sky-dk);
+    transition: letter-spacing 0.2s ease;
+}
+
+.ly-card:hover .ly-more {
+    letter-spacing: 0.03em;
+}
+
+/* ---------- Popup ---------- */
+.ly-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background: rgba(30, 58, 82, 0.55);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    animation: ly-fade 0.2s ease;
+}
+
+.ly-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    max-height: calc(100vh - 2.5rem);
+    overflow-y: auto;
+    padding: 2.25rem;
+    background: var(--white);
+    border-radius: 22px;
+    box-shadow: 0 30px 70px rgba(30, 58, 82, 0.35);
+    animation: ly-up 0.25s ease;
+}
+
+.ly-dialog > .ly-icon {
+    margin-bottom: 0.9rem;
+}
+
+.ly-dialog h3 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+.ly-modal-body p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.ly-modal-body h4 {
+    margin: 1.4rem 0 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.ly-modal-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ly-modal-body li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: 1.02rem;
+    line-height: 1.65;
+}
+
+.ly-modal-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 0.55rem;
+    height: 0.55rem;
+    background: var(--sky);
+    border-radius: 50%;
+}
+
+.ly-modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+}
+
+.ly-modal-actions .btn {
+    flex: 1 1 160px;
+    font-family: var(--font);
+    cursor: pointer;
+}
+
+.ly-modal-actions .btn-secondary {
+    background: var(--white);
+}
+
+.ly-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 1.7rem;
+    line-height: 1;
+    color: var(--ink);
+    background: #F1F8FD;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ly-close:hover {
+    color: var(--white);
+    background: var(--sky);
+}
+
+.ly-close:focus-visible {
+    outline: 3px solid var(--sky);
+    outline-offset: 2px;
+}
+
+@keyframes ly-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ly-up   { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 600px) {
+    .ly-dialog { padding: 1.75rem 1.4rem; }
+    .ly-dialog h3 { font-size: 1.35rem; padding-right: 2.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ly-modal, .ly-dialog { animation: none; }
+}
+
+/* ikon layanan memakai gambar */
+/* foto layanan: tampil sebagai banner di atas teks */
+.ly-card .ly-icon {
+    display: block;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 220px;
+    margin-bottom: 0.6rem;
+    overflow: hidden;
+    background: #E8F3FC;
+    border-radius: 14px;
+}
+
+.ly-card .ly-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+}
+
+.ly-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* gambar memenuhi kotak, bagian lebih dipotong */
+    border-radius: inherit;
+}
+
+.ly-num {
+    z-index: 2;
+    padding: 0.15rem 0.6rem;
+    color: var(--sky-dk);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 999px;
+}
+
+/* tombol unduh aplikasi (Play Store & App Store) */
+.ly-store {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.8rem;
+}
+
+.ly-store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.6rem 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    background: var(--ink);
+    border-radius: 12px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ly-store-btn:hover {
+    background: var(--sky-dk);
+    transform: translateY(-2px);
+}
+
+.ly-store-btn:focus-visible {
+    outline: 3px solid var(--sky);
+    outline-offset: 2px;
+}
+
+.ly-store-btn svg {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 auto;
+}
+
+.ly-store-btn span {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.ly-store-btn small {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 0.85;
 }
