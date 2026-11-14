@@ -9,7 +9,7 @@
     --line:    #DCEAF5;   /* garis tipis */
     --sky:     #5AAEE8;   /* biru muda utama */
     --sky-dk:  #3B8FCF;   /* biru muda lebih tegas (hover, footer) */
-    --ink:     #1E3A52;   /* teks judul */
+    --ink:     #0f4f87;   /* teks judul */
     --text:    #51697D;   /* teks isi */
     --font:    "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
 }
@@ -1512,14 +1512,14 @@ body::before {
 .ar-read {
     max-width: 780px;
     margin: 0 auto;
-    overflow: hidden;
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 20px;
+}
+
+.ar-read .berita-img {
+    border-radius: 16px;
 }
 
 .ar-read-body {
-    padding: 2rem 2.25rem 2.5rem;
+    padding: 1.75rem 0 0.5rem;
 }
 
 .ar-read h1 {
@@ -1556,12 +1556,64 @@ body::before {
     margin-top: 3rem;
 }
 
+.ar-more {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .ar-more .cp-title {
     font-size: clamp(1.3rem, 2.6vw, 1.7rem);
 }
 
+/* kartu "Artikel Lainnya": 2 kolom, ringkas */
+.ar-more .berita-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.ar-more .berita-card {
+    border-radius: 14px;
+}
+
+.ar-more .berita-img {
+    aspect-ratio: 16 / 9;
+}
+
+.ar-more .berita-body {
+    gap: 0.5rem;
+    padding: 1rem 1.1rem 1.1rem;
+}
+
+.ar-more .berita-kategori {
+    font-size: 0.7rem;
+}
+
+.ar-more .berita-judul {
+    font-size: 1rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ar-more .berita-ringkasan {
+    font-size: 0.88rem;
+    -webkit-line-clamp: 2;
+}
+
+.ar-more .berita-meta {
+    padding-top: 0.7rem;
+    font-size: 0.8rem;
+}
+
 @media (max-width: 600px) {
-    .ar-read-body { padding: 1.5rem 1.25rem 2rem; }
+    .ar-more .berita-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .ar-read-body { padding: 1.25rem 0 0.5rem; }
 }
 
 .ar-read .berita-img { aspect-ratio: 16 / 8; }
@@ -2532,7 +2584,7 @@ body::before { display: none; }          /* foto latar lama dimatikan di semua h
     display: block;
     flex: 0 0 auto;
     width: 100%;
-    height: 220px;
+    height: auto;                  /* tinggi mengikuti foto, tidak dipotong */
     margin-bottom: 0.6rem;
     overflow: hidden;
     background: #E8F3FC;
@@ -2542,8 +2594,8 @@ body::before { display: none; }          /* foto latar lama dimatikan di semua h
 .ly-card .ly-icon img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     padding: 0;
 }
 
@@ -2611,4 +2663,51 @@ body::before { display: none; }          /* foto latar lama dimatikan di semua h
     font-size: 0.7rem;
     font-weight: 500;
     opacity: 0.85;
+}
+
+/* ==========================================================
+   LOGO NAVBAR ANTI-KEDIP
+   Logo digambar lewat CSS (::before) supaya sudah tampil bersamaan
+   dengan navbar saat pindah halaman. Logo <img> buatan logo-scroll.js
+   tetap ada, tapi transparan, hanya sebagai area klik.
+   ========================================================== */
+.container-navbar::before {
+    content: "";
+    position: absolute;
+    left: 4rem;
+    top: 50%;
+    width: 72px;
+    height: 72px;
+    transform: translateY(-50%);
+    background: url("logo.png") center / contain no-repeat;
+    pointer-events: none;
+}
+
+.navbar-logo {
+    opacity: 0;
+}
+
+@media (max-width: 860px) {
+    .container-navbar::before {
+        left: 1.5rem;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-navbar::before {
+        left: 0.75rem;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Transisi halus antar halaman (untuk browser yang mendukung, mis. saat sudah online) */
+@view-transition {
+    navigation: auto;
+}
+
+.container-navbar {
+    view-transition-name: navbar;
 }

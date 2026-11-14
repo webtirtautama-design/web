@@ -127,8 +127,6 @@
 
         if (a.isi && a.isi.length) {
             a.isi.forEach(function (par) { body.appendChild(el('p', '', par)); });
-        } else {
-            body.appendChild(el('p', '', 'Artikel lengkap akan segera kami tambahkan. Untuk informasi lebih lanjut, silakan hubungi BUMDes Tirta Utama pada jam layanan.'));
         }
         elRead.appendChild(body);
 

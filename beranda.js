@@ -17,11 +17,11 @@
             ikon: 'air-bersih.jpeg'
         },
         {   judul: 'Layanan Warung Digital',
-            ringkasan: 'Pertumbuhan bisnis anda mulai dari sini mami menyediakan layanan jasa design web, berbagai macam kebutuhan aplikasi untuk usaha anda.',
+            ringkasan: 'Pertumbuhan bisnis anda mulai dari sini kami menyediakan layanan jasa design web, berbagai macam kebutuhan aplikasi untuk usaha anda.',
             ikon: 'warung-digital.jpeg'
         },
         {   judul: 'Layanan Multipayment',
-            ringkasan: 'Bayar PBB, listrik, tiket pesawat dan kereta, dan kebutuhan finansial lain telah tersedia di NUM Desa Tirta Utama',
+            ringkasan: 'Bayar PBB, listrik, tiket pesawat dan kereta, dan kebutuhan finansial lain telah tersedia di BUM Desa Tirta Utama',
             ikon: 'multipayment.jpeg'
         }
     ];

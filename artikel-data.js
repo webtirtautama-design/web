@@ -1,20 +1,20 @@
 var DAFTAR_ARTIKEL = [
     {
-        judul: "Layanan Air Bersih Kini Menjangkau Lebih Banyak Warga Mukiran",
-        kategori: "Layanan",
-        tanggal: "2026-10-31",
-        gambar: "bumdes.png",
-        ilustrasi: "tetes",
-        ringkasan: "BUM Desa Tirta Utama terus memperluas jaringan distribusi agar air bersih mudah dinikmati seluruh warga desa.",
-        link: "artikel.html"
+        judul: "Monitoring BPK Pusat",
+        kategori: "",
+        tanggal: "2025-10-25",
+        gambar: "monitoring.jpeg",
+        ilustrasi: "monitoring",
+        ringkasan: "Guna menjamin dan memastikan akuntabilitas keuangan BUM Desa Tirta Utama, BPK Pusat telah mengadakan kunjungan kerja di BUM Desa Tirta Utama pada Oktober tahun 2025. Di dampingi Dinas PMD Kab. Semarang, Pendamping Desa dan Pemerintah Desa Mukiran.",
+        link: ""
     },
     {
-        judul: "Bayar Tagihan dan Beli Pulsa Kini Bisa Lewat BUMDes Tirta Utama",
-        kategori: "Layanan Digital",
-        tanggal: "2026-10-28",
-        gambar: "",
+        judul: "BPKP Pusat dalam Rangka \"Evaluasi Akuntabilitas Keuangan dan Kinerja BUM Desa Tirta Utama\"",
+        kategori: "",
+        tanggal: "2026-11-04",
+        gambar: "evaluasi.jpeg",
         ilustrasi: "bayar",
-        ringkasan: "Layanan multipayment hadir untuk memudahkan warga membayar kebutuhan sehari-hari tanpa harus keluar desa.",
-        link: "artikel.html"
+        ringkasan: "Guna tercipta sebuah badan usaha yang sehat dan terkelola dengan baik dan benar BPKP Pusat melaksanakan Monitoring dan Evaluasi Akuntabilitas Keuangan serta Kinerja BUM Desa Tirta Utama BPKP pada tanggal 26 s/d 28 Oktober 2026 dengan mendapatkan pendampingan dari Dinas PMD Kabupaten Semarang, Pendamping Desa juga Pemerintah Desa Mukiran. Hal ini di harapkan supaya BUM Desa Tirta Utama dapat terkelola dengan baik sehingga tercipta sebuah badan usaha yang akuntabel.",
+        link: ""
     },
 ];
